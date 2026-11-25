@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva: Datos Curiosos de Cristóbal Colón - Colegio Montano</title>
+    <!-- Tailwind CSS para diseño moderno y responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Tipografía y estilos base institucionales del Colegio Montano */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F2F5E9; /* Blanco Suave */
+            color: #2D3748;
+        }
+        /* Paleta de colores oficial Colegio Montano */
+        .bg-montano-blue { background-color: #1269A8; }
+        .text-montano-blue { color: #1269A8; }
+        .border-montano-yellow { border-color: #F7D615; }
+        .bg-montano-yellow { background-color: #F7D615; }
+        .text-montano-green { color: #54887D; }
+        .bg-montano-green { background-color: #54887D; }
+        .bg-montano-light-blue { background-color: #88B5C7; }
+        .bg-montano-olive { background-color: #A6B046; }
+        
+        /* Estilo Pizarra Digital */
+        .pizarra-frame {
+            border: 6px solid #F7D615;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background-color: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="p-3 sm:p-6 min-h-screen flex flex-col items-center">
+
+    <!-- CONTENEDOR PRINCIPAL / PIZARRA DIGITAL -->
+    <div id="pizarra-container" class="pizarra-frame w-full max-w-6xl flex flex-col overflow-hidden transition-all duration-300">
+        
+        <!-- ENCABEZADO INSTITUCIONAL -->
+        <header class="bg-montano-blue text-white p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-center gap-4 border-b-4 border-montano-yellow">
+            <div class="flex items-center gap-4">
+                <!-- Logo Institucional del Colegio Montano -->
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyEop0yf6lZ7Jk9MILZxF1rBj4Oqs5esyhIQ&s" alt="Logo Colegio Montano" class="w-12 h-12 rounded-full bg-white p-1 object-contain shadow-md" onerror="this.src='https://placehold.co/60x60/1269A8/FFFFFF?text=CM'">
+                <div>
+                    <h1 class="text-xl sm:text-2xl font-bold">Colegio Montano</h1>
+                    <p class="text-xs sm:text-sm text-montano-yellow font-medium">Guía de Estudio Interactiva: Datos Curiosos del Primer Viaje de Colón (Primero Básico)</p>
+                </div>
+            </div>
+            
+            <!-- Botón de Pantalla Completa (Fullscreen API) -->
+            <button onclick="toggleFullscreen()" class="bg-montano-yellow text-slate-900 font-bold px-4 py-2 rounded-lg shadow hover:bg-yellow-400 transition transform hover:scale-105 flex items-center gap-2 text-sm">
+                <span>[ ⛶ Pantalla completa ]</span>
+            </button>
+        </header>
+
+        <!-- MENÚ DE PESTAÑAS HORIZONTALES -->
+        <nav class="bg-slate-100 p-2 sm:p-3 flex flex-wrap justify-center gap-2 border-b border-slate-300">
+            <button onclick="switchTab('teoria')" id="btn-teoria" class="tab-btn px-4 py-2 rounded-lg font-bold text-sm transition bg-montano-blue text-white shadow">1. Teoría</button>
+            <button onclick="switchTab('ejemplos')" id="btn-ejemplos" class="tab-btn px-4 py-2 rounded-lg font-bold text-sm transition bg-white text-slate-700 hover:bg-slate-200 shadow-sm">2. Ejemplos (15)</button>
+            <button onclick="switchTab('ejercicios')" id="btn-ejercicios" class="tab-btn px-4 py-2 rounded-lg font-bold text-sm transition bg-white text-slate-700 hover:bg-slate-200 shadow-sm">3. Ejercicios (15)</button>
+            <button onclick="switchTab('reflexion')" id="btn-reflexion" class="tab-btn px-4 py-2 rounded-lg font-bold text-sm transition bg-white text-slate-700 hover:bg-slate-200 shadow-sm">4. Reflexión Crítica</button>
+            <button onclick="switchTab('evaluacion')" id="btn-evaluacion" class="tab-btn px-4 py-2 rounded-lg font-bold text-sm transition bg-white text-slate-700 hover:bg-slate-200 shadow-sm">5. Evaluación</button>
+        </nav>
+
+        <!-- CONTENIDO DE LAS SECCIONES -->
+        <main class="p-4 sm:p-8 bg-[#F2F5E9] flex-grow overflow-y-auto max-h-[70vh]">
+
+            <!-- SECCIÓN 1: TEORÍA -->
+            <section id="tab-teoria" class="tab-content space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow border-l-8 border-montano-blue">
+                    <h2 class="text-2xl font-bold text-montano-blue mb-3">El Diario de a Bordo del Primer Viaje de Cristóbal Colón (1492)</h2>
+                    <p class="text-slate-700 leading-relaxed mb-4">
+                        En el año 1492, Cristóbal Colón emprendió un viaje que cambió la historia del mundo occidental. Aunque el diario original se perdió, el religioso <strong>Fray Bartolomé de Las Casas</strong> transcribió y compendió gran parte de su contenido en su obra <em>Historia de las Indias</em>. Gracias a este valioso texto, hoy conocemos no solo los mapas y las rutas, sino también increíbles anécdotas, mitos, errores de ubicación y el contacto con los pueblos originarios de América.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                        <div class="p-4 bg-sky-50 rounded-lg border border-montano-light-blue">
+                            <h3 class="font-bold text-montano-blue mb-1">🗺️ El Error Geográfico</h3>
+                            <p class="text-sm text-slate-600">Colón estaba convencido de haber llegado a las costas de Japón (Cipango) o China (Catai), llevando incluso traductores de árabe y griego que no servían para las lenguas nativas.</p>
+                        </div>
+                        <div class="p-4 bg-emerald-50 rounded-lg border border-montano-green">
+                            <h3 class="font-bold text-montano-green mb-1">🛶 Cultura y Palabras</h3>
+                            <p class="text-sm text-slate-600">Los taínos recibieron a los españoles pacíficamente. De este contacto surgieron las primeras palabras incorporadas al castellano: <em>canoa, hamaca, ají y cacique</em>.</p>
+                        </div>
+                        <div class="p-4 bg-amber-50 rounded-lg border border-montano-yellow">
+                            <h3 class="font-bold text-amber-700 mb-1">📜 Fantasía y Realidad</h3>
+                            <p class="text-sm text-slate-600">El diario relata encuentros con supuestas sirenas (que eran manatíes), leyendas de hombres con un solo ojo y situaciones extremas como botellas arrojadas al mar durante tormentas.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 2: EJEMPLOS RESUELTOS (15 TOTALES) -->
+            <section id="tab-ejemplos" class="tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <h2 class="text-2xl font-bold text-montano-blue mb-2">Ejemplos Históricos Resueltos</h2>
+                    <p class="text-sm text-slate-600 mb-6">Analiza cómo se interpretan los hechos del diario de a bordo en tres niveles de complejidad.</p>
+
+                    <!-- Nivel Básico -->
+                    <h3 class="text-lg font-bold text-montano-green mt-4 mb-3 border-b pb-1">🟢 Nivel Básico (Casos Directos del Diario)</h3>
+                    <div class="space-y-4">
+                        <!-- Ejemplo 1 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-olive text-white rounded">Básico 1</span>
+                            <h4 class="font-bold text-slate-800 mt-2">La primera palabra autóctona: Canoa</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> El 26 de octubre de 1492, Colón registró la palabra "canoa" porque las embarcaciones nativas no se parecían a las europeas y no tenían velas.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Demuestra cómo el choque cultural enriquece el idioma con términos para objetos sin equivalente previo en Europa.</p>
+                        </div>
+                        <!-- Ejemplo 2 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-olive text-white rounded">Básico 2</span>
+                            <h4 class="font-bold text-slate-800 mt-2">El primer contacto con el tabaco</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> El 6 de noviembre, exploradores informaron que hombres y mujeres llevaban hierbas encendidas ("sahumerios") para chupar el humo.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Primer registro histórico escrito del uso del tabaco en América y su adopción posterior por españoles.</p>
+                        </div>
+                        <!-- Ejemplo 3 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-olive text-white rounded">Básico 3</span>
+                            <h4 class="font-bold text-slate-800 mt-2">Intérpretes inútiles</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> Colón llevaba traductores de latín, griego, árabe y caldeo pensando que llegaba al Gran Khan de Asia.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Evidencia el absoluto desconocimiento geográfico de la expedición respecto a la existencia de un nuevo continente.</p>
+                        </div>
+                        <!-- Ejemplo 4 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-olive text-white rounded">Básico 4</span>
+                            <h4 class="font-bold text-slate-800 mt-2">La descripción de los taínos</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> El 12 de octubre, Colón describió a los nativos como personas pacíficas, de hermosos cuerpos y que tomaban las espadas por el filo por ignorancia.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Refleja la primera impresión europea sobre las comunidades indígenas pacíficas de las Antillas.</p>
+                        </div>
+                        <!-- Ejemplo 5 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-olive text-white rounded">Básico 5</span>
+                            <h4 class="font-bold text-slate-800 mt-2">El origen del nombre "Caribe"</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> Los taínos aterrorizaban a Colón con historias sobre los "caniba" o caribes, un pueblo expansivo.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Origen etimológico del término caribe y la diferenciación entre tribus pacíficas y guerreras según las crónicas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Nivel Intermedio -->
+                    <h3 class="text-lg font-bold text-montano-blue mt-8 mb-3 border-b pb-1">🟡 Nivel Intermedio (Estrategias y Psicología de la Tripulación)</h3>
+                    <div class="space-y-4">
+                        <!-- Ejemplo 6 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-blue text-white rounded">Intermedio 1</span>
+                            <h4 class="font-bold text-slate-800 mt-2">La doble contabilidad de Colón</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> Colón recortaba entre un 10% y 30% al kilometraje diario real en sus registros públicos para calmar la ansiedad de la tripulación.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Muestra el liderazgo táctico basado en la manipulación informativa para evitar un motín inminente.</p>
+                        </div>
+                        <!-- Ejemplo 7 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-blue text-white rounded">Intermedio 2</span>
+                            <h4 class="font-bold text-slate-800 mt-2">La fuga de Martín Alonso Pinzón</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> El comandante de la Pinta se apartó de Colón para buscar oro por cuenta propia en la isla Baneque.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Evidencia los conflictos de mando, la rivalidad y la ambición desmedida por el oro entre los capitanes.</p>
+                        </div>
+                        <!-- Ejemplo 8 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-blue text-white rounded">Intermedio 3</span>
+                            <h4 class="font-bold text-slate-800 mt-2">El naufragio de la Santa María</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> Tras encallar la nao capitana, Colón interpretó que fue un milagro divino para fundar el Fuerte Navidad.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Análisis providencialista de los errores humanos y cómo transformaron un accidente en una base estratégica.</p>
+                        </div>
+                        <!-- Ejemplo 9 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-blue text-white rounded">Intermedio 4</span>
+                            <h4 class="font-bold text-slate-800 mt-2">La confusión con Cipango (Japón)</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> Al ver hierbas flotando y aves, Colón creyó pasar junto a Japón, ignorando la realidad de su ubicación.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> La perseverancia sesgada de un navegante guiado por mapas y expectativas previas erróneas.</p>
+                        </div>
+                        <!-- Ejemplo 10 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-blue text-white rounded">Intermedio 5</span>
+                            <h4 class="font-bold text-slate-500 rounded">Intermedio 5</h4>
+                            <h4 class="font-bold text-slate-800 mt-2">La botella al mar en la tormenta</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> Temiendo naufragar en las Azores (1493), escribió un pergamino, lo selló en un barril y lo lanzó al océano.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Simbolismo del aislamiento extremo y el deseo humano de perdurar ante la catástrofe.</p>
+                        </div>
+                    </div>
+
+                    <!-- Nivel Avanzado -->
+                    <h3 class="text-lg font-bold text-amber-600 mt-8 mb-3 border-b pb-1">🔴 Nivel Avanzado (Mitos Medievales y Contexto Histórico)</h3>
+                    <div class="space-y-4">
+                        <!-- Ejemplo 11 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-amber-600 text-white rounded">Avanzado 1</span>
+                            <h4 class="font-bold text-slate-800 mt-2">Sirenas haitianas y hombres con hocico de perro</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> El diario menciona haber visto tres "sirenas" (hoy identificadas como manatíes) y criaturas monstruosas devoradoras de hombres.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Persistencia del imaginario fantástico medieval proyectado sobre las tierras desconocidas del Nuevo Mundo.</p>
+                        </div>
+                        <!-- Ejemplo 12 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-amber-600 text-white rounded">Avanzado 2</span>
+                            <h4 class="font-bold text-slate-800 mt-2">El mito clásico de las Amazonas</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> El 6 de enero de 1493, Colón registró una isla poblada exclusivamente por mujeres guerreras (Matinino).</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Sincretismo cultural donde mitos de la antigua Grecia se trasladan geográficamente al continente americano.</p>
+                        </div>
+                        <!-- Ejemplo 13 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-amber-600 text-white rounded">Avanzado 3</span>
+                            <h4 class="font-bold text-slate-800 mt-2":>La segunda mentira de distancias a su regreso</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> Al volver a España, Colón mintió inflando las distancias recorridas para confundir a pilotos rivales y mantener el monopolio de su ruta.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Geopolítica y estrategia comercial de la navegación renacentista en competencia con Portugal.</p>
+                        </div>
+                        <!-- Ejemplo 14 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-amber-600 text-white rounded">Avanzado 4</span>
+                            <h4 class="font-bold text-slate-800 mt-2">El impacto de la antropofagia en el relato</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> Los testimonios sobre canibalismo fueron recopilados por Las Casas aunque el propio almirante mostraba dudas iniciales.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Análisis crítico de fuentes históricas entre la observación directa y los testimonios de terceros.</p>
+                        </div>
+                        <!-- Ejemplo 15 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-amber-600 text-white rounded">Avanzado 5</span>
+                            <h4 class="font-bold text-slate-800 mt-2">La fusión entre providencialismo y colonización</h4>
+                            <p class="text-sm text-slate-600"><strong>Anécdota:</strong> Justificar la empresa colombina como un mandato divino directo para financiar expediciones y minas de oro.</p>
+                            <p class="text-xs text-slate-500 mt-1"><strong>Análisis pedagógico:</strong> Comprensión profunda de la mentalidad religiosa y económica del siglo XV en Europa.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 3: EJERCICIOS PRÁCTICOS CON SOLUCIONES OCULTAS (15 TOTALES) -->
+            <section id="tab-ejercicios" class="tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow">
+                    <h2 class="text-2xl font-bold text-montano-blue mb-2">Ejercicios Prácticos Interactivos</h2>
+                    <p class="text-sm text-slate-600 mb-6">Resuelve cada consigna y haz clic en "Mostrar/Ocultar Solución" para verificar tu razonamiento.</p>
+
+                    <!-- Nivel Básico -->
+                    <h3 class="text-lg font-bold text-montano-green mt-4 mb-3 border-b pb-1">🟢 Nivel Básico (Comprensión Literal)</h3>
+                    <div class="space-y-4">
+                        <!-- Ejercicio 1 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-olive text-white rounded">Ejercicio 1</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Qué nombre recibió la primera palabra autóctona registrada por Colón en su diario el 26 de octubre de 1492?</p>
+                            <button onclick="toggleSolution('sol-1')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-1" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Revisar el texto histórico sobre vocabulario.<br>
+                                2. Identificar la embarcación típica descrita sin velas.<br>
+                                <strong>Respuesta:</strong> La palabra registrada fue <em>canoa</em>.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 2 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-olive text-white rounded">Ejercicio 2</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Cómo describió Cristóbal Colón a los nativos taínos en su encuentro del 12 de octubre en cuanto a sus armas?</p>
+                            <button onclick="toggleSolution('sol-2')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-2" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Localizar la entrada del 12 de octubre en el documento.<br>
+                                2. Buscar la mención sobre herramientas defensivas.<br>
+                                <strong>Respuesta:</strong> Colón señaló que no traían armas ni las conocían, al punto de tomar las espadas por el filo y cortarse por ignorancia.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 3 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-olive text-white rounded">Ejercicio 3</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Qué planta aromática y recreativa descubrieron los emisarios de Colón en Cuba el 6 de noviembre?</p>
+                            <button onclick="toggleSolution('sol-3')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-3" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Revisar la sección de descubrimientos botánicos.<br>
+                                2. Identificar el uso de hojas secas enrolladas como "mosquetes".<br>
+                                <strong>Respuesta:</strong> El tabaco (llamados "mosquetes" o tabacos por los nativos).
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 4 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-olive text-white rounded">Ejercicio 4</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Quién fue el religioso que compendió y salvaguardó el contenido del diario de a bordo en su obra <em>Historia de las Indias</em>?</p>
+                            <button onclick="toggleSolution('sol-4')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-4" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Consultar la introducción del documento histórico.<br>
+                                <strong>Respuesta:</strong> Fray Bartolomé de Las Casas.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 5 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-olive text-white rounded">Ejercicio 5</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Qué animales marinos confundió Colón con "sirenas" el 9 de enero?</p>
+                            <button onclick="toggleSolution('sol-5')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-5" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Buscar referencias zoológicas y notas del editor.<br>
+                                <strong>Respuesta:</strong> Manatíes o elefantes marinos.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nivel Intermedio -->
+                    <h3 class="text-lg font-bold text-montano-blue mt-8 mb-3 border-b pb-1">🟡 Nivel Intermedio (Análisis y Comportamiento)</h3>
+                    <div class="space-y-4">
+                        <!-- Ejercicio 6 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-blue text-white rounded">Ejercicio 6</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Por qué razón implementó Cristóbal Colón una "doble contabilidad" del millaje durante la travesía?</p>
+                            <button onclick="toggleSolution('sol-6')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-6" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Analizar el apartado "La doble contabilidad de Colón".<br>
+                                <strong>Respuesta:</strong> Para engañar a la tripulación fingiendo que habían recorrido menos distancia y así evitar el pánico, el cansancio y un amotinamiento.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 7 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-blue text-white rounded">Ejercicio 7</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Qué motivó a Martín Alonso Pinzón, comandante de la Pinta, a separarse de Colón en noviembre de 1492?</p>
+                            <button onclick="toggleSolution('sol-7')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-7" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Revisar la sección "Pinzón se corta solo".<br>
+                                <strong>Respuesta:</strong> La ambición y soberbia generadas por la posibilidad de encontrar oro en la isla Baneque.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 8 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-blue text-white rounded">Ejercicio 8</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Cómo interpretó Colón el accidente y encallamiento de la carabela Santa María en Navidad?</p>
+                            <button onclick="toggleSolution('sol-8')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-8" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Leer el apartado "La mano de Dios".<br>
+                                <strong>Respuesta:</strong> Lo interpretó como un milagro divino para obligarles a establecer allí el Fuerte Navidad, por ser un sitio excelente cerca de minas de oro.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 9 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-blue text-white rounded">Ejercicio 9</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Por qué fallaron por completo los traductores de lenguas clásicas (griego, latín y árabe) que llevaba la expedición?</p>
+                            <button onclick="toggleSolution('sol-9')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-9" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Evaluar el contexto geográfico de la llegada.<br>
+                                <strong>Respuesta:</strong> Porque no habían llegado a Asia ni a Japón, sino a un continente completamente nuevo con una diversidad lingüística ajena al Viejo Mundo.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 10 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-montano-blue text-white rounded">Ejercicio 10</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Qué objetivo comercial tenía la segunda mentira de Colón sobre el millaje al regresar a Europa?</p>
+                            <button onclick="toggleSolution('sol-10')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-10" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Analizar el final de la sección sobre contabilidad.<br>
+                                <strong>Respuesta:</strong> Fingió haber andado más camino para desatinar a los pilotos y marineros rivales, asegurándose el control exclusivo de la ruta a las Indias.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nivel Avanzado -->
+                    <h3 class="text-lg font-bold text-amber-600 mt-8 mb-3 border-b pb-1">🔴 Nivel Avanzado (Pensamiento Crítico y Mitología)</h3>
+                    <div class="space-y-4">
+                        <!-- Ejercicio 11 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-amber-600 text-white rounded">Ejercicio 11</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Cómo influyeron los mitos medievales y grecorromanos en la forma en que los europeos interpretaron la fauna y los habitantes de América?</p>
+                            <button onclick="toggleSolution('sol-11')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-11" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Relacionar sirenas, hombres con hocico de perro y Amazonas.<br>
+                                <strong>Respuesta:</strong> Los europeos proyectaron sus leyendas preexistentes (como monstruos medievales y mitos griegos) sobre la realidad americana al no tener explicaciones científicas iniciales.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 12 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-amber-600 text-white rounded">Ejercicio 12</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Qué significado simbólico y práctico tuvo el lanzamiento del barril con el pergamino durante la tormenta del 14 de febrero de 1493?</p>
+                            <button onclick="toggleSolution('sol-12')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-12" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Revisar la sección "Casi no vuelve".<br>
+                                <strong>Respuesta:</strong> Representó un acto desesperado de supervivencia para garantizar que el descubrimiento histórico trascendiera a los Reyes Católicos en caso de naufragio total.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 13 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-amber-600 text-white rounded">Ejercicio 13</span>
+                            <p class="font-medium text-slate-800 mt-2">Explique la diferencia entre la percepción pacífica inicial de los taínos y el temor generado por los caniba (caribes).</p>
+                            <button onclick="toggleSolution('sol-13')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-13" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Contratar los diarios del 12 de octubre y de diciembre.<br>
+                                <strong>Respuesta:</strong> Los taínos eran percibidos como inofensivos y desnudos, mientras que los caribes eran descritos por sus enemigos como una amenaza antropófaga y guerrera en expansión.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 14 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-amber-600 text-white rounded">Ejercicio 14</span>
+                            <p class="font-medium text-slate-800 mt-2">¿De qué manera el proceso de mestizaje étnico y cultural se vincula con los registros lingüísticos del diario de Colón?</p>
+                            <button onclick="toggleSolution('sol-14')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-14" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Analizar el impacto de incorporar vocablos locales.<br>
+                                <strong>Respuesta:</strong> Muestra el inicio de la síntesis cultural al adoptar nombres autóctonos (hamaca, ají, cacique) para elementos que no existían en Europa.
+                            </div>
+                        </div>
+
+                        <!-- Ejercicio 15 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <span class="text-xs font-bold px-2 py-1 bg-amber-600 text-white rounded">Ejercicio 15</span>
+                            <p class="font-medium text-slate-800 mt-2">¿Por qué es fundamental para la historiografía moderna analizar el diario de Colón a través de la transcripción de Fray Bartolomé de Las Casas?</p>
+                            <button onclick="toggleSolution('sol-15')" class="mt-2 text-xs bg-montano-blue text-white px-3 py-1 rounded hover:bg-sky-700 transition">Mostrar / Ocultar Solución</button>
+                            <div id="sol-15" class="hidden mt-3 p-3 bg-sky-50 text-slate-700 text-sm rounded border border-montano-light-blue">
+                                <strong>Solución Paso a Paso:</strong><br>
+                                1. Evaluar la pérdida del original y el rol del fraile.<br>
+                                <strong>Respuesta:</strong> Porque al haberse perdido el documento autógrafo, el compendio de Las Casas mantiene la estructura cronológica y pasajes textuales exactos, permitiendo reconstruir la perspectiva del navegante.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 4: REFLEXIÓN CRÍTICA -->
+            <section id="tab-reflexion" class="tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow border-l-8 border-montano-green">
+                    <h2 class="text-2xl font-bold text-montano-green mb-3">Preguntas de Reflexión Crítica</h2>
+                    <p class="text-slate-700 mb-6">Analiza las siguientes cuestiones abiertas para fomentar el pensamiento lógico e histórico en el aula:</p>
+                    
+                    <div class="space-y-4">
+                        <div class="p-4 bg-emerald-50 rounded-lg border border-montano-green">
+                            <h3 class="font-bold text-montano-green mb-1">1. La ética de la información</h3>
+                            <p class="text-sm text-slate-700">Si fueras capitán de una expedición moderna, ¿consideras ético ocultar información sobre las distancias a tus subordinados para evitar el pánico, o crees que la transparencia es obligatoria?</p>
+                        </div>
+                        <div class="p-4 bg-emerald-50 rounded-lg border border-montano-green">
+                            <h3 class="font-bold text-montano-green mb-1">2. El peso de los prejuicios</h3>
+                            <p class="text-sm text-slate-700">¿Cómo demuestran los relatos sobre "sirenas" y "hombres con hocicos de perro" que los seres humanos tendemos a ver lo que esperamos encontrar en lugar de la realidad?</p>
+                        </div>
+                        <div class="p-4 bg-emerald-50 rounded-lg border border-montano-green">
+                            <h3 class="font-bold text-montano-green mb-1">3. El valor del patrimonio lingüístico</h3>
+                            <p class="text-sm text-slate-700">¿Por qué palabras como <em>canoa</em> o <em>hamaca</em> sobrevivieron quinientos años mientras otras como <em>ajes</em> o <em>cazabe</em> se perdieron en el uso cotidiano?</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECCIÓN 5: EVALUACIÓN FORMATIVA -->
+            <section id="tab-evaluacion" class="tab-content hidden space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow border-l-8 border-montano-yellow">
+                    <h2 class="text-2xl font-bold text-slate-800 mb-3">Evaluación Formativa</h2>
+                    <p class="text-slate-600 mb-6">Prueba tus conocimientos generales sobre el primer viaje de Colón con esta autoevaluación interactiva.</p>
+
+                    <div class="space-y-6">
+                        <!-- Pregunta 1 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <p class="font-bold text-slate-800 mb-2">1. ¿Quién transcribió y compendió el diario de a bordo del primer viaje de Colón en su obra <em>Historia de las Indias</em>?</p>
+                            <div class="space-y-2 text-sm">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="p1" value="a"> A) Martín Alonso Pinzón</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="p1" value="b"> B) Fray Bartolomé de Las Casas</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="p1" value="c"> C) Los Reyes Católicos</label>
+                            </div>
+                            <button onclick="checkAnswer('p1', 'b', 'res-p1')" class="mt-3 text-xs bg-montano-blue text-white px-3 py-1 rounded">Verificar Respuesta</button>
+                            <p id="res-p1" class="text-xs font-bold mt-2"></p>
+                        </div>
+
+                        <!-- Pregunta 2 -->
+                        <div class="p-4 bg-slate-50 rounded-lg border">
+                            <p class="font-bold text-slate-800 mb-2">2. ¿Qué territorio creía firmemente haber alcanzado Colón cuando tocaba tierra en América?</p>
+                            <div class="space-y-2 text-sm">
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="p2" value="a"> A) Las costas de Japón (Cipango) o China</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="p2" value="b"> B) El continente africano</label>
+                                <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="p2" value="c"> C) Australia</label>
+                            </div>
+                            <button onclick="checkAnswer('p2', 'a', 'res-p2')" class="mt-3 text-xs bg-montano-blue text-white px-3 py-1 rounded">Verificar Respuesta</button>
+                            <p id="res-p2" class="text-xs font-bold mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- PIE DE PÁGINA INSTITUCIONAL -->
+        <footer class="bg-slate-200 p-4 text-center text-xs text-slate-600 border-t flex flex-col sm:flex-row justify-between items-center gap-2">
+            <p>Colegio Montano — Excelencia Académica y Formación Integral</p>
+            <p>Plataforma Educativa Canvas / Formato Pizarra Digital Interactiva</p>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT DE INTERACTIVIDAD -->
+    <script>
+        // Función para cambiar de pestaña horizontal
+        function switchTab(tabId) {
+            // Ocultar todas las secciones
+            const sections = document.querySelectorAll('.tab-content');
+            sections.forEach(sec => sec.classList.add('hidden'));
+
+            // Desactivar todos los botones
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-montano-blue', 'text-white', 'shadow');
+                btn.classList.add('bg-white', 'text-slate-700', 'shadow-sm');
+            });
+
+            // Mostrar la sección seleccionada
+            document.getElementById('tab-' + tabId).classList.remove('hidden');
+
+            // Activar el botón correspondiente
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.remove('bg-white', 'text-slate-700', 'shadow-sm');
+            activeBtn.classList.add('bg-montano-blue', 'text-white', 'shadow');
+        }
+
+        // Función para mostrar u ocultar soluciones paso a paso
+        function toggleSolution(solId) {
+            const solDiv = document.getElementById(solId);
+            if (solDiv.classList.contains('hidden')) {
+                solDiv.classList.remove('hidden');
+            } else {
+                solDiv.classList.add('hidden');
+            }
+        }
+
+        // Función de Pantalla Completa (Fullscreen API)
+        function toggleFullscreen() {
+            const container = document.getElementById('pizarra-container');
+            if (!document.fullscreenElement) {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.requestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Verificador de respuestas de evaluación formativa
+        function checkAnswer(questionName, correctVal, resultId) {
+            const radios = document.getElementsByName(questionName);
+            let selected = null;
+            for (const r of radios) {
+                if (r.checked) {
+                    selected = r.value;
+                    break;
+                }
+            }
+            const resP = document.getElementById(resultId);
+            if (!selected) {
+                resP.textContent = "⚠️ Por favor, selecciona una opción.";
+                resP.className = "text-xs font-bold mt-2 text-amber-600";
+                return;
+            }
+            if (selected === correctVal) {
+                resP.textContent = "✅ ¡Correcto! Has comprendido muy bien el concepto.";
+                resP.className = "text-xs font-bold mt-2 text-emerald-600";
+            } else {
+                resP.textContent = "❌ Incorrecto. Revisa la sección de teoría o ejemplos e inténtalo de nuevo.";
+                resP.className = "text-xs font-bold mt-2 text-rose-600";
+            }
+        }
+    </script>
+</body>
+</html>
